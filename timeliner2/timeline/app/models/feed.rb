@@ -1,13 +1,13 @@
 class Feed < ActiveRecord::Base
-
+  
   def feed_adder
 
     # to automate this process in future 
 
-    # f  - id of a given news url goes here. "1", "2", ...
-    # n  - name of a given news url. "the guardian", etc.
-    # u  - url of the given news url. "http://www.***.rss"
-    # c  - category of given news url. "sports", "tech", etc.
+    # f  - id of a given news url goes here. e.g. "1", "2", ...
+    # n  - name of a given news url. e.g. "the guardian", etc.
+    # u  - url of the given news url. e.g. "http://www.***.rss"
+    # c  - category of given news url. e.g. "sports", "tech", etc.
 
     # create a database, passing in values
     # Feed.create(fid: f, name: n, url: u, category: c)
