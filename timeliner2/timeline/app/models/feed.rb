@@ -1,5 +1,6 @@
 class Feed < ActiveRecord::Base
-  
+  has_many :Article
+
   def feed_adder
 
     # to automate this process in future 
@@ -18,7 +19,7 @@ class Feed < ActiveRecord::Base
     require 'open-uri'
     require 'simple-rss'
 
-    # takes url from Feed object and assigns it to url
+    # takes url from a Feed object and assigns it to url
     url = Feed.url
 
     # opens url and assign to rss object
@@ -32,8 +33,10 @@ class Feed < ActiveRecord::Base
       d = r.description.force_encoding("UTF-8")
 
      # Create database entry parsing in the following params
-     # Article.create(title: t, url: l, description: d)
+     Feed.Article.create(title: t, url: l, description: d)
+     :Article.create(title: t, url: l, description: d)
    end
  end
+
 end
 
